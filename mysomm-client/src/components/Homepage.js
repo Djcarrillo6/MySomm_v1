@@ -8,9 +8,9 @@ const Homepage = ({ currentUser }) => {
     if (!currentUser.isAuthenticated) {
         return (
             <div className="home-hero" >
-                <h1>Are you a wine lover?</h1>
-                <h4>New to MySomm?</h4>
-                <Link to="/signup" className="btn btn-primary" >
+                <h1 id="sub-title1" >Are you a wine lover?</h1>
+                <h4 id="sub-title2" >New to MySomm?</h4>
+                <Link to="/signup" id="main-btn" className="btn btn-primary" >
                     Sign Up here!
             </Link>
             </div>

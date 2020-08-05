@@ -19,12 +19,14 @@ body {
   cursor: pointer;
 }
 
+/*Anytime images are located inside the .navbar --> direct descendant selector */
+
 .navbar-brand>img {
   display: inline-block;
-  width: 20px;
-  margin-bottom: 2px;
-  margin-right: 5px;
-  border-radius: 2px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 55px;
 }
 
 ul.nav.navbar-nav li {
@@ -56,13 +58,69 @@ ul.nav.navbar-nav li {
   text-shadow: 0 0 8px #66757f;
 }
 
-#mesages .list-group-item {
+#sub-title1 {
+  animation-name: moveInRight;
+  animation-duration: 2s;
+}
+
+#sub-title2 {
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+}
+
+#main-btn {
+  animation-name: moveInBottom;
+  animation-duration: 2s;
+}
+
+/* Custom Animation Functions */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10remx);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+#messages .list-group-item {
   display: flex;
   align-items: flex-start;
   padding: 7px 20px 12px;
 }
 
-#message:not(.no-hover) .list-group-item:hover {
+#messages:not(.no-hover) .list-group-item:hover {
   background-color: #e6ecf0;
 }
 
