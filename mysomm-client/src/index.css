@@ -94,7 +94,7 @@ ul.nav.navbar-nav li {
     opacity: 0;
     transform: translateX(10remx);
   }
-  80% {
+  75% {
     transform: translateX(-1rem);
   }
   100% {
