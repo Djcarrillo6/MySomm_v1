@@ -12,7 +12,7 @@ GENERAL:
 
 - FONT: When setting a font-family for you elements, it is a best practice to put all font realted stylings into the "body" selector.  THIS IS BECAUSE MOST FONTS STYLES ARE INHERITED
 
-- When search engines are scrapping results, the "h1" element is the primary search parameter.
+* When search engines are scrapping results, the "h1" element is the primary search parameter.
 
 - POSITIONING: When using absolute postioning on a child element, its postions will be relative to the FIRST element that has a position value of relative.(VERIFY?)
 

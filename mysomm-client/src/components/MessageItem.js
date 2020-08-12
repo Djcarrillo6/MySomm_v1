@@ -4,24 +4,23 @@ import { Link } from "react-router-dom";
 import DefaultProfileImage from "../images/default-profile-image.jpeg";
 import { removeMessage } from "../store/actions/messages";
 
-const MessageItem = ({ date, profileImageUrl, text, username, removeMessage, isCorrectUser }) => (
+const MessageItem = ({ date, time, profileImageUrl, text, username, removeMessage, isCorrectUser }) => (
     <div>
         <li className="list-group-item">
             <img src={profileImageUrl || DefaultProfileImage} alt={username} height="100" width="100" className="timeline-image" />
             <div className="message-area">
                 <Link to="/">@{username} &nbsp;</Link>
                 <span className="text-muted">
-                    <Moment className="text-muted" format="Do MMM YYYY">
+                    <Moment className="text-muted" format="Do YYYY-MM-DD HH:mm a">
                         {date}
-                    </Moment>
+                    </Moment >
                 </span>
-                <p>{text}</p>
+                <p className="msg-txt" >{text}</p>
                 {isCorrectUser && (
-                    <a className="btn btn-danger" onClick={removeMessage}>
+                    <a id="trashcan" onClick={removeMessage}>
                         Delete
                     </a>
                 )}
-
             </div>
         </li>
     </div>

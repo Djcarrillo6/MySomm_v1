@@ -2,6 +2,12 @@ body {
   background-color: #e6ecf0;
 }
 
+/*Buttons on Nav*/
+
+.nvbtn {
+  position: relative;
+}
+
 /* Nav */
 
 .navbar {
@@ -9,12 +15,16 @@ body {
 }
 
 .navbar a {
-  font-weight: bold;
-  color: white;
+  color: maroon;
+  position: relative;
+  background-color: #e6ecf0;
+  padding: 0.5rem;
+  border-radius: 10rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .navbar a:hover {
-  color: white;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -34,7 +44,7 @@ ul.nav.navbar-nav li {
 }
 
 .onboarding>.navbar {
-  background-image: url("./images/nav1-bg.png");
+  background-image: url("./images/original_redBubbles.jpg");
   background-size: 100% 100%;
 }
 
@@ -124,6 +134,16 @@ ul.nav.navbar-nav li {
   background-color: #e6ecf0;
 }
 
+.message-area {
+  width: 578.33px;
+}
+
+.msg-txt {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  color: maroon;
+  font-size: xx-large;
+}
+
 .timeline-image {
   border-radius: 50px;
   height: 48px;
@@ -141,4 +161,21 @@ a.btn.btn-danger, a.btn.btn-danger:hover {
 
 .navbar-header {
   margin: 0 auto;
+}
+
+#trashcan {
+  content: url('https://api.iconify.design/octicon-trashcan.svg?color=red&height=16');
+  vertical-align: -0.125em;
+  float: right;
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+#title-logo {
+  color: white;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  /* font-size: xxx-large; */
+  font-size: 6rem;
+  margin-right: 30rem;
+  padding-left: 16rem;
 }

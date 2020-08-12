@@ -21,9 +21,26 @@ class Navbar extends Component {
                             <img src={Logo} alt="MySomm Home" />
                         </Link>
                     </div>
+                    <h1 id="title-logo" >
+                        MySomm
+                    </h1>
                     {this.props.currentUser.isAuthenticated ? (
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="btns-navbar" >
+                            <li>
+                                <Link
+                                    to="/"
+                                >
+                                    MySomm Dashboard
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/"
+                                >
+                                    Education
+                                </Link>
+                            </li>
+                            <li>
                                 <Link
                                     to={`/users/${this.props.currentUser.user.id}/messages/new`}
                                 >
@@ -34,6 +51,7 @@ class Navbar extends Component {
                                 <a onClick={this.logout}>Log Out</a>
                             </li>
                         </ul>
+
                     )
                         : (
 
