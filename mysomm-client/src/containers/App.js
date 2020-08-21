@@ -14,6 +14,7 @@ if (localStorage.jwtToken) {
 
   try {
     store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    // to prevent someone from manually tampering with the key of jwToken in localstorage. 
   } catch (e) {
     store.dispatch(setCurrentUser({}));
   }
