@@ -107,7 +107,7 @@ ul.nav.navbar-nav li {
   75.5% {
     transform: translateX(-1rem);
   }
-  100% {
+  99% {
     opacity: 1;
     transform: translate(0);
   }
