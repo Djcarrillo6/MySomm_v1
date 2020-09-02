@@ -4,6 +4,7 @@ import { configureStore } from "../store";
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from './Navbar';
 import Main from "./Main";
+import ChatRoom from '../components/ChatRoom';
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 
@@ -27,6 +28,7 @@ const App = () => (
       <div className="onboarding" >
         <Navbar />
         <Main />
+        <ChatRoom path="/mysomm-chat" />
       </div>
     </Router>
   </Provider>

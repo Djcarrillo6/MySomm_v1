@@ -42,6 +42,13 @@ class Navbar extends Component {
                             </li>
                             <li>
                                 <Link
+                                    to="/mysomm-chat"
+                                >
+                                    Somm Chat
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     to={`/users/${this.props.currentUser.user.id}/messages/new`}
                                 >
                                     New Message
