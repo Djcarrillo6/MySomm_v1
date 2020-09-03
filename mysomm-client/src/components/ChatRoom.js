@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import '../chatcord/public/css/style.css';
 import { render } from 'react-dom';
 
 
