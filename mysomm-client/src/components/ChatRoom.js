@@ -7,7 +7,7 @@ const ChatRoom = (props) => {
     return (
         <div>
             <h1>Chat Room Socket.io</h1>
-            <h2>Plug In w/ Redux</h2>
+            <h2>Plug In w/ Redux to dispatch </h2>
 
         </div>
     );
