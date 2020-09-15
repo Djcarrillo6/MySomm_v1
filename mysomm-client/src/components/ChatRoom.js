@@ -7,8 +7,6 @@ const ChatRoom = (props) => {
     return (
         <div>
             <h1>Chat Room Socket.io</h1>
-            <h2>Plug In from socket librayry = componet</h2>
-
         </div>
     );
 }
