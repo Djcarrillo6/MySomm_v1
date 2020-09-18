@@ -1,16 +1,24 @@
 require("dotenv").config();
 const express = require('express');
+const socketio = require('socket.io');
+const http = require('http');
 const cors = require('cors');
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
 
-const port = 8081;
+
+const port = process.env.port || 8081;
+
 
 const errorHandler = require('./controllers/error');
 const authRoutes = require('./routes/auth');
 const messageRoutes = require('./routes/messages');
+const chatRoutes = require('./routes/chat');
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const db = require("./models");
 const bodyParser = require("body-parser");
+
 
 
 app.use(cors());
@@ -23,6 +31,8 @@ app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messageRoutes);
+app.use(chatRoutes);
+
 
 app.get("/api/messages", loginRequired, async function (req, res, next) {
     try {
@@ -49,8 +59,22 @@ app.use(function (req, res, next) {
 
 app.use(errorHandler);
 
-const server = app.listen(port, () => {
+
+
+server.listen(port, () => {
     console.log(`Now listening on port ${port}`);
+});
+
+
+
+// Socket.io Code Block
+io.on('connection', (socket) => {
+    console.log('We have a new connection!!!');
+
+    socket.on('disconnect', () => {
+        console.log('A user has left the chat room');
+    })
+
 });
 
 

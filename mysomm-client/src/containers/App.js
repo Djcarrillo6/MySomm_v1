@@ -1,10 +1,11 @@
 import React from 'react';
 import { Provider } from "react-redux";
 import { configureStore } from "../store";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import Main from "./Main";
-import ChatRoom from '../components/ChatRoom';
+import Join from "../components/Join";
+import Chat from "../components/Chat";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 
@@ -28,7 +29,8 @@ const App = () => (
       <div className="onboarding" >
         <Navbar />
         <Main />
-        <ChatRoom path="/mysomm-chat" />
+        <Route path="/mysomm-join-chat" exact component={Join} />
+        <Route path="/chatroom" component={Chat} />
       </div>
     </Router>
   </Provider>

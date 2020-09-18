@@ -42,9 +42,9 @@ class Navbar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to="/mysomm-chat"
+                                    to="/mysomm-join-chat"
                                 >
-                                    Somm Chat
+                                    Join Somm Chat
                                 </Link>
                             </li>
                             <li>
