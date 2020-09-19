@@ -30,7 +30,7 @@ class Navbar extends Component {
                                 <Link
                                     to="/"
                                 >
-                                    MySomm Dashboard
+                                    Dashboard
                                 </Link>
                             </li>
                             <li>
@@ -44,7 +44,7 @@ class Navbar extends Component {
                                 <Link
                                     to="/mysomm-join-chat"
                                 >
-                                    Join Somm Chat
+                                    Chat
                                 </Link>
                             </li>
                             <li>

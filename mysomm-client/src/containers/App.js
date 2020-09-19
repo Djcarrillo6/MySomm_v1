@@ -4,8 +4,8 @@ import { configureStore } from "../store";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import Main from "./Main";
-import Join from "../components/Join";
-import Chat from "../components/Chat";
+import Join from "../components/chat/Join";
+import Chat from "../components/chat/Chat";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 
@@ -20,7 +20,7 @@ if (localStorage.jwtToken) {
   } catch (e) {
     store.dispatch(setCurrentUser({}));
   }
-}
+};
 
 const App = () => (
 
@@ -30,7 +30,7 @@ const App = () => (
         <Navbar />
         <Main />
         <Route path="/mysomm-join-chat" exact component={Join} />
-        <Route path="/chatroom" component={Chat} />
+        <Route path="/chat" component={Chat} />
       </div>
     </Router>
   </Provider>
