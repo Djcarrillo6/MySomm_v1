@@ -19,65 +19,50 @@ const Chat = ({ location }) => {
     const [messages, setMessages] = useState([]);
     const ENDPOINT = 'localhost:8081';
 
-    // destrcutured 'name' & 'room' from the queryString.parse() object. 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
 
         socket = io(ENDPOINT);
 
-        setName(name);
         setRoom(room);
+        setName(name)
 
-        socket.emit('join', { name, room }, () => {
-
+        socket.emit('join', { name, room }, (error) => {
+            if (error) {
+                alert(error);
+            }
         });
-
-
-        return () => {
-            socket.emit('disconnect');
-
-            socket.off();
-        }
-
     }, [ENDPOINT, location.search]);
 
-
     useEffect(() => {
-        socket.on('message', (message) => {
-            setMessages([...messages, message]);
-        })
-    }, [messages]);
+        socket.on('message', message => {
+            setMessages(messages => [...messages, message]);
+        });
 
-    // function for sending messages
+        socket.on("roomData", ({ users }) => {
+            setUsers(users);
+        });
+    }, []);
+
     const sendMessage = (event) => {
-
         event.preventDefault();
 
         if (message) {
             socket.emit('sendMessage', message, () => setMessage(''));
-        };
-    };
-
-
-    console.log(message, messages);
+        }
+    }
 
     return (
         <div className="outerContainer">
+            {/*div class .container1 changed to not conflict with css props */}
             <div className="container1">
                 <InfoBar room={room} />
-                <Messages
-                    messages={messages}
-                    name={name}
-                />
-                <Input
-                    message={message}
-                    setMessage={setMessage}
-                    sendMessage={sendMessage}
-                />
-                <TextContainer users={users} />
+                <Messages messages={messages} name={name} />
+                <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
             </div>
+            <TextContainer users={users} />
         </div>
-    )
+    );
 };
 
 export default Chat;

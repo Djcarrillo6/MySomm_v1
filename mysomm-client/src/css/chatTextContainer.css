@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-left: 100px;
     color: white;
-    height: 5%;
+    height: 60%;
     justify-content: space-between;
 }
 
@@ -22,8 +22,8 @@
     padding-left: 10px;
 }
 
-.textContainer h1 {
-    margin-bottom: 0px;
+#onlineIc {
+    width: 20px;
 }
 
 @media (min-width: 320px) and (max-width: 1200px) {
