@@ -12,7 +12,7 @@ const Homepage = ({ currentUser }) => {
                 <h4 id="sub-title2" >New to MySomm?</h4>
                 <Link to="/signup" id="main-btn" className="btn btn-primary" >
                     Sign Up here!
-            </Link>
+                </Link>
             </div>
         );
     }
