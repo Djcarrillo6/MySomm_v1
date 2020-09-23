@@ -54,7 +54,7 @@ const Chat = ({ location }) => {
 
     return (
         <div className="outerContainer">
-            {/* Div class .container1 changed to not conflict with css props */}
+            {/* Div class .container1 changed to not overwrite a .container class */}
             <div className="container1">
                 <InfoBar room={room} />
                 <Messages messages={messages} name={name} />
