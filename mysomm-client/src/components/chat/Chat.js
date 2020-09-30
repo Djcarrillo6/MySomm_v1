@@ -52,7 +52,7 @@ const Chat = ({ location }) => {
 
   return (
     <div className='outerContainer'>
-      {/* Div class '.container1' changed so to not overwrite the '.container' class */}
+      {/* div class '.container1' changed so to not overwrite the '.container' class */}
       <div className='container1'>
         <InfoBar room={room} />
         <Messages messages={messages} name={name} />
