@@ -87,7 +87,7 @@ io.on('connection', (socket) => {
         callback();
     });
 
-    // Admin sent msgs =='message', user msgs == 'sendMessage'. 
+    // Admin sent msgs =='message', user msgs == 'sendMessage' 
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
 
