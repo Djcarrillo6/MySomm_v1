@@ -35,13 +35,6 @@ class Navbar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to="/"
-                                >
-                                    Education
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
                                     to="/mysomm-join-chat"
                                 >
                                     Chat
