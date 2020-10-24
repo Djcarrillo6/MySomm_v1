@@ -4,7 +4,7 @@ mongoose.Promise = Promise;
 mongoose.set('useCreateIndex', true);
 
 
-mongoose.connect("mongodb://localhost/mysomm-Db", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mysomm-Db", {
     keepAlive: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

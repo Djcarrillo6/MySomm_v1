@@ -6,10 +6,10 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const { addUser, removeUser, getUser, getUsersInRoom } = require('../mysomm-client/src/store/actions/chat.js');
+const { addUser, removeUser, getUser, getUsersInRoom } = require('./chat.js');
 
 
-const port = 8081;
+const port = process.env.PORT || 8081;
 
 
 
@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messageRoutes);
-app.use(chatRoutes);
+app.use("/mysomm-chat", loginRequired, ensureCorrectUser, chatRoutes);
 
 
 app.get("/api/messages", loginRequired, async function (req, res, next) {
